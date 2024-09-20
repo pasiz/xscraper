@@ -26,7 +26,7 @@
     let unchangedCount = 0;
     const username = window.location.pathname.split('/')[1] || 'unknown';
 
-    console.log("scraping user tweets :@",username);
+    console.log("scraping user tweets :",username);
 
     const scrollToEndIntervalID = setInterval(() => {
         window.scrollBy(0, scrollStep);
