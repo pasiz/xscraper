@@ -17,8 +17,8 @@
 
     // End of tunables
 
-    let tweets = []; // Initialize an empty array to hold all tweet elements
-    let tweet_elements = [];
+    let tweets = []; // Initialize an empty array to hold tweetDOM
+    let tweet_elements = []; //Initialize empty array for tweet data extraction
     if(DEBUG)
         console.log("scrollStepping: ", scrollStep);
 
@@ -97,8 +97,8 @@
     function updateTweets() {
         document.querySelectorAll('[data-testid="cellInnerDiv"]').forEach(tweetElement => {
             tweetText = tweetElement.innerHTML;
-            if (!tweets.includes(tweetText)) { // Check if the tweet's text is not already in the array
-                tweets.push(tweetText); // Add new tweet's text to the array
+            if (!tweets.includes(tweetText)) { // Check if the tweet's html is not in the dom
+                tweets.push(tweetText); // Add new tweet's html to the dom variable
                 console.log("Elements scraped: ", tweets.length)
             }
         });
